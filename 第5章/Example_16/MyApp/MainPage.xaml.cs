@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+
+// “空白頁”項範本在 http://go.microsoft.com/fwlink/?LinkId=391641 上有介紹
+
+namespace MyApp
+{
+    /// <summary>
+    /// 可用於自己或導覽至 Frame 內定的空白頁。
+    /// </summary>
+    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+
+            this.NavigationCacheMode = NavigationCacheMode.Required;
+        }
+
+        /// <summary>
+        /// 在此頁將要在 Frame 中顯示時進行呼叫。
+        /// </summary>
+        /// <param name="e">描述如何存取此頁的事件資料。
+        /// 此參數通常用於組態頁。</param>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // TODO: 準備此處顯示的頁面。
+
+            // TODO: 若果您的套用程式包括多個頁面，請確保
+            // 透過登錄以下事件來處理硬體“後退”按鈕:
+            // Windows.Phone.UI.Input.HardwareButtons.BackPressed 事件。
+            // 若果使用由某些範本提供的 NavigationHelper，
+            // 則系統會為您處理該事件。
+        }
+
+        private void OnBoldChecked ( object sender, RoutedEventArgs e )
+        {
+            // 粗體
+            this.richedt.Document.Selection.CharacterFormat.Bold = Windows.UI.Text.FormatEffect.On;
+        }
+
+        private void OnBoldUnchecked ( object sender, RoutedEventArgs e )
+        {
+            // 取消粗體
+            this.richedt.Document.Selection.CharacterFormat.Bold = Windows.UI.Text.FormatEffect.Off;
+        }
+
+        private void OnUnderlineChecked ( object sender, RoutedEventArgs e )
+        {
+            // 下劃線
+            this.richedt.Document.Selection.CharacterFormat.Underline = Windows.UI.Text.UnderlineType.Thick;
+        }
+
+        private void OnUnderlineUnchecked ( object sender, RoutedEventArgs e )
+        {
+            // 取消下劃線
+            this.richedt.Document.Selection.CharacterFormat.Underline = Windows.UI.Text.UnderlineType.None;
+        }
+
+        private void OnGreenClick ( object sender, RoutedEventArgs e )
+        {
+            // 將選定文字的彩色改為綠色
+            richedt.Document.Selection.CharacterFormat.ForegroundColor = Colors.Green;
+        }
+
+        private void OnBlueClick ( object sender, RoutedEventArgs e )
+        {
+            // 將選定文字的彩色改為藍色
+            richedt.Document.Selection.CharacterFormat.ForegroundColor = Colors.Blue;
+        }
+
+        private void OnRedClick ( object sender, RoutedEventArgs e )
+        {
+            // 設定選定文字的彩色為紅色
+            richedt.Document.Selection.CharacterFormat.ForegroundColor = Colors.Red;
+        }
+    }
+}

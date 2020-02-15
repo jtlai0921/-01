@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="輸入員工訊息" Style="{StaticResource HeaderTextBlockStyle}" Margin="0,6,0,12"/>
+        
+        <StackPanel Grid.Row="1" Margin="5">
+            <TextBox x:Name="txtID" Header="員工編號："/>
+            <TextBox x:Name="txtName" Header="員工姓名："/>
+            <TextBox x:Name="txtAge" Header="員工年齡：">
+                <TextBox.InputScope>
+                    <InputScope>
+                        <InputScope.Names>
+                            <InputScopeName NameValue="Number"/>
+                        </InputScope.Names>
+                    </InputScope>
+                </TextBox.InputScope>
+            </TextBox>
+        </StackPanel>
+    </Grid>
+    
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Icon="Accept" Label="確定" Click="OnClick"/>
+        </AppBar>
+    </Page.BottomAppBar>
+</Page>

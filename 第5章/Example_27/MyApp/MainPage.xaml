@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <StackPanel.Resources>
+            <local:ValidCommand x:Key="cmd"/>
+        </StackPanel.Resources>
+        <TextBox Header="請輸入名稱：" x:Name="txtInput"/>
+        <TextBlock Foreground="Gray" Text="輸入的字串長度不能小於3，不能大於10。" TextWrapping="Wrap"/>
+        <Button Content="確認輸入" HorizontalAlignment="Stretch" Command="{StaticResource cmd}" CommandParameter="{Binding ElementName=txtInput,Path=Text,Mode=OneWay}"/>
+    </StackPanel>
+</Page>

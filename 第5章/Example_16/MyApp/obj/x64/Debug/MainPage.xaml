@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:ConnectionId='5' Content="粗體"                                                    />
+                <CheckBox x:ConnectionId='6' Margin="15,0,0,0" Content="下劃線"                                                              />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:ConnectionId='2' Content="綠色"                     />
+                <Button x:ConnectionId='3' Margin="13,0,0,0" Content="藍色"                    />
+                <Button x:ConnectionId='4' Content="紅色" Margin="13,0,0,0"                   />
+            </StackPanel>
+        </StackPanel>
+        
+        <RichEditBox x:ConnectionId='1' x:Name="richedt" Grid.Row="1" Margin="5" VerticalAlignment="Stretch" TextWrapping="Wrap"/>
+    </Grid>
+</Page>
+

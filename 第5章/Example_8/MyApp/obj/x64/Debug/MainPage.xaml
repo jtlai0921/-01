@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="1,18,1,18"/>
+            </Style>
+        </Grid.Resources>
+        <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollMode="Auto">
+            <StackPanel>
+                <!-- 簡單文字 -->
+                <TextBlock Text="小明，早上好。"/>
+                
+                <!-- 設定字型大小和彩色 -->
+                <TextBlock Text="聖人無常師" FontSize="36" Foreground="Yellow"/>
+                
+                <!-- 文字換行 -->
+                <TextBlock>
+                    第一行文字<LineBreak/>第二行文字
+                </TextBlock>
+                
+                <!-- 復合格式 -->
+                <TextBlock TextWrapping="Wrap">
+                    <Run FontSize="24" Text="這是"/>
+                    <Run FontSize="32" Foreground="Blue" Text="藍色"/>
+                    <Run FontSize="24" Text="，這是"/>
+                    <Run FontSize="32" Foreground="Pink" Text="粉紅色"/>
+                    <Run FontSize="24" Text="，這是"/>
+                    <Run FontSize="32" Foreground="Orange" Text="橙色"/>
+                    <Run FontSize="24" Text="。"/>
+                </TextBlock>
+                
+                <!-- 帶超連結 -->
+                <TextBlock FontSize="24">
+                    MSDN官方主頁：
+                    <Hyperlink NavigateUri="http://msdn.microsoft.com/zh-cn"><Underline>點擊存取</Underline></Hyperlink>
+                </TextBlock>
+                
+                <!-- 字型粗體 -->
+                <TextBlock FontSize="20">
+                    這是一件<Bold FontSize="22">很重要</Bold>的事情。
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
+
